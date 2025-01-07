@@ -33,6 +33,12 @@ export default function Example() {
                                 >
                                     Dashboard
                                 </Link>
+                                <Link
+                                    to='/addProduct'
+                                    className={'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'}
+                                >
+                                    Add Product
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -100,12 +106,18 @@ export default function Example() {
 
             <DisclosurePanel className="sm:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2">
-                    <a
-                        href={'/'}
+                    <Link
+                        to='/'
                         className={'text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'}
                     >
                         Dashboard
-                    </a>
+                    </Link>
+                    <Link
+                        to='/addProduct'
+                        className={'text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'}
+                    >
+                        Add Product
+                    </Link>
                 </div>
             </DisclosurePanel>
         </Disclosure>
