@@ -1,18 +1,12 @@
-import { IconButton } from '@material-tailwind/react';
 import { useMutation } from '@tanstack/react-query';
-import axios from 'axios';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import { addProduct } from './api/FetchProduct';
 
 const AddProduct = () => {
     const [productName, setProductName] = useState('');
     const [productPrice, setProductPrice] = useState('');
     const [products, setProducts] = useState([]);
-
-    const addProduct = async (product) => {
-        const result = await axios.post('https://dummyjson.com/products/add', product);
-        return result.data;
-    }
 
     const mutation = useMutation({
         mutationFn: addProduct,

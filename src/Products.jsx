@@ -1,13 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import React from 'react'
 import { Link } from 'react-router';
+import { fetchProducts } from './api/FetchProduct';
 
 const Products = () => {
-    const fetchProducts = async () => {
-        const result = await axios.get('https://dummyjson.com/products');
-        return result.data.products;
-    }
     const { isPending, error, isError, data: products } = useQuery({
         queryKey: ['products'],
         queryFn: fetchProducts,
